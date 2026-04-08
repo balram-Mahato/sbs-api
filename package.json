@@ -1,0 +1,22 @@
+{
+  "name": "sbs-api",
+  "version": "1.0.0",
+  "description": "sbs api",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "keywords": [
+    "sbs"
+  ],
+  "author": "balram",
+  "license": "ISC",
+  "dependencies": {
+    "body": "^5.1.0",
+    "express": "^5.2.1",
+    "mongoose": "^9.3.3",
+    "nodemon": "^3.1.14",
+    "parser": "^0.1.4"
+  }
+}
