@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express')
 const app = express()
 // app.get('/student', (req, res) => {
@@ -32,7 +33,7 @@ const bodyParser = require('body-parser')
 
 const connectWithDatabase = async()=>{
     try{
-        await  mongoose.connect('mongodb+srv://balram:balram1@sbs.ifuxome.mongodb.net/?appName=SBS')
+        await  mongoose.connect(process.env.MONGODB_URL)
         console.log('MongoDB connected successfully with database')
     } catch (err) {
         console.log('something is wrong')
