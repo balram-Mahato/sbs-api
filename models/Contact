@@ -1,11 +1,14 @@
 const mongoose = require('mongoose')
 
 const contactSchema = new mongoose.Schema({
-    fullName:String,
-    phone:String,
-    email:String,
-    address:String,
-    gender:String
+    fullName:{type:String,required:true},
+    phone:{type:String,required:true},
+    email:{type:String,required:true},
+    address:{type:String,required:true},
+    gender:{type:String,required:true},
+    userId:{type:mongoose.Schema.Types.ObjectId,required:true,ref:'user'},
+    imageId:{type:String,required:true},
+    imageUrl:{type:String,required:true}
 })
 
 module.exports = mongoose.model('contact',contactSchema)

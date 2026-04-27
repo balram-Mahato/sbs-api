@@ -19,6 +19,7 @@ const contactRoute = require('./Routes/contact')
 const userRoute = require('./Routes/user')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
+const fileupload = require('express-fileupload')
 
 // mongoose.connect('mongodb+srv://balram:balram1@sbs.ifuxome.mongodb.net/?appName=SBS')
 // .then(() => {
@@ -45,6 +46,10 @@ connectWithDatabase()
 
 app.use(bodyParser.urlencoded())
 app.use(bodyParser.json())
+app.use(fileupload({
+    useTempFiles : true,
+    tempFileDir : '/tmp/'
+}));
 
 app.use('/user',userRoute)
 app.use('/contact',contactRoute)
